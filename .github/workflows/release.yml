@@ -26,7 +26,7 @@ jobs:
         env:
           DOCKER_BUILDKIT: 1
         run: |
-          tox -e docker -- --tag=rajatg/cgei-awx-ee:${{ github.event.release.tag_name }}
+          tox -e docker -- --tag=rajatg/base-awx-ee:${{ github.event.release.tag_name }}
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
@@ -36,4 +36,4 @@ jobs:
     
       - name: Push Image in to Docker Hub
         run: |
-          docker push rajatg/cgei-awx-ee:${{ github.event.release.tag_name }}
+          docker push rajatg/base-awx-ee:${{ github.event.release.tag_name }}
